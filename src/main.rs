@@ -38,6 +38,12 @@ fn main() {
 
     println!("某些屎山已启动，本程序自动退出");
 
+    //开启新线程2秒后关闭本程序
+    std::thread::spawn(move || {
+        std::thread::sleep(std::time::Duration::from_secs(2));
+        std::process::exit(0);
+    });
+
     event_loop.run(move |_event, _, control_flow| {
         *control_flow = ControlFlow::Poll;
 
