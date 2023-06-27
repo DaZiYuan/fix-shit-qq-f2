@@ -36,11 +36,11 @@ fn main() {
         }
     }
 
-    println!("某些屎山已启动，本程序自动退出");
+    println!("某些屎山已启动，本程序将自动退出");
 
     //开启新线程2秒后关闭本程序
     std::thread::spawn(move || {
-        std::thread::sleep(std::time::Duration::from_secs(2));
+        std::thread::sleep(std::time::Duration::from_secs(20));
         std::process::exit(0);
     });
 
